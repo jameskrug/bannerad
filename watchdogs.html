@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <script>
+        var theTimer;
+        function goForThree(){
+            console.log("setting timer");
+            document.getElementById("shaderBox").style.opacity = .5;
+            theTimer = setTimeout(function(){
+                document.getElementById("enterAd").style.display = "block";
+                document.getElementById("darkener").style.display = "block";
+                document.getElementById("shaderBox").style.display = "none";
+            }, 3000);
+        }
+        function cancelThree(){
+            console.log("timer cancelled?")
+            document.getElementById("shaderBox").style.opacity = 0;
+            clearTimeout(theTimer);
+        }
+        function closeImage(){
+            console.log("close image")
+            document.getElementById("enterAd").style.display = "none";
+            document.getElementById("darkener").style.display = "none";
+            document.getElementById("shaderBox").style.display = "block";
+        }
+        function buyStuff(){
+            document.getElementById("joinNow").style.display = "block";
+        }
+    </script>
+    <title>Watchdogs!</title>
+    <link rel="stylesheet" href="watchdogs.css">
+</head>
+<body>
+    <div id="darkener" onclick="closeImage()"></div>
+    <div style="overflow: hidden;width: 305px;height: 250px;margin-top: 100px;">
+        <div class="shaderBox" id="shaderBox" onmouseover="goForThree()" onmouseout="cancelThree()"></div>
+        <div style="overflow:hidden">
+            <img class="image1" id="image1" src="main-backdrop.png"/>
+            <div style="position:relative">
+                <img class="textbackground" id="textbackground" src="textbackground.png">
+            </div>
+            <div style="position:absolute;top:100px;">
+                <img class="bluetext" id="bluetext" src="textimage.png">
+            </div>
+        </div>
+        <div style="position: absolute;z-index: 3;top: 100px;">
+            <img class="videomessage" id="videomessage" src="videomessage.png"/>
+        </div>
+        <div style="position: absolute;z-index: 3;top: 100px;">
+            <img class="videomessage2" id="videomessage2" src="videomessage2.png"/>
+        </div>
+        <div style="position: absolute;z-index: 3;top: 100px;overflow:hidden">
+            <img class="watchdogstitle" id="watchdogstitle" src="watchdogstitle.png"/>
+        </div>
+        <div style="position: absolute;z-index: 3;top: 100px;overflow:hidden">
+            <img class="playstation" id="playstation" src="playstation.png"/>
+        </div>
+        <div style="position: absolute;z-index: 3;top: 100px;overflow:hidden">
+            <img class="hackingweapon" id="hackingweapon" src="hackingweapon.png"/>
+        </div>
+        <div style="position: absolute;z-index: 3;top: 100px;overflow:hidden">
+            <img class="rollover2" id="rollover2" src="rollover2.png"/>
+        </div>
+        <div style="position: absolute;z-index: 4;top: 100px;overflow:hidden">
+            <img class="preordernow" id="preordernow" src="preordernow.png"/>
+        </div>
+        <div style="position: absolute;z-index: 4;top: 100px;overflow:hidden">
+            <img class="rollover" id="rollover" src="rollover.png"/>
+        </div>
+        <div style="position: absolute;z-index: 4;top: 100px;overflow:hidden">
+            <img class="gamecase" id="gamecase" src="gamecase.png"/>
+        </div>
+     <div class="enterAd" id="enterAd">
+        <img id="bigImage" src="wdjoin.jpg"/>
+        <div class="closeButton" onclick="closeImage()" ></div>
+        <div class="animateOnAd" onclick="buyStuff()"></div>
+        <div style="position:absolute;left:453px;top:200px;z-index:8">
+            <img id="joinNow" onclick="this.style.display='none'"src="preview.jpg"/>
+        </div>
+    </div>
+    </div>
+   <!-- <div class="enterAd" id="enterAd">
+        <img class="image5" id="bigImage" src="wdjoin.jpg"/>
+        <div class="closeButton" onclick="closeImage()" ></div>
+        <div class="animateOnAd" onclick="buyStuff()"></div>
+        <div style="position:absolute;left:453px;top:200px;z-index:8">
+            <img id="joinNow" onclick="this.style.display='none'"src="preview.jpg"/>
+        </div>
+    </div>-->
+    <!--<div class="move"> </div>-->
+</body>
+
+</html>
